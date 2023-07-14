@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import { Button } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 
 function App() {
+
+  const [deger, setDeger] = useState(0);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Zikirmatik</h1>
+      <h1>{deger}</h1>
+
+      <Button variant='primary' onClick={()=>{setDeger(deger + 1)}}>Arttır</Button>
+      <br/>
+      <br/>
+      <Button variant='primary' onClick={()=>{setDeger(0)}}>Sıfırla</Button>
     </div>
   );
 }
